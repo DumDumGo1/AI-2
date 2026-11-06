@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>??? — Discover the Unknown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor-glow"></div>
+
+<header>
+    <a class="logo" href="#">UNKNOWN<span>®</span></a>
+    <nav>
+        <a href="#start">Start</a>
+        <a href="#wissen">Entdecken</a>
+        <a href="#geheimnisse">Geheimnisse</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+    <button id="secretBtn">??? ✦</button>
+</header>
+
+<section class="hero" id="start">
+    <div class="hero-label">✦ A WORLD WAITING TO BE DISCOVERED ✦</div>
+
+    <h1>WELCOME TO<br>
+        <span>THE UNKNOWN.</span>
+    </h1>
+
+    <p>Manche Dinge sind unglaublich. Andere sind unfassbar.
+       Und manche musst du einfach selbst entdecken.</p>
+
+    <a href="#wissen" class="main-button">LET'S EXPLORE ↘</a>
+
+    <div class="floating emoji-one">✨</div>
+    <div class="floating emoji-two">🔮</div>
+    <div class="floating emoji-three">⚡</div>
+
+    <div class="scroll">SCROLL TO DISCOVER ↓</div>
+</section>
+
+<section class="section" id="wissen">
+    <div class="tag">01 — DISCOVER</div>
+    <h2>Eine Welt voller<br><span>Überraschungen.</span></h2>
+    <p class="intro">Hier gibt es mehr zu entdecken, als du denkst.</p>
+
+    <div class="card-grid" id="cards">
+        <article class="card">
+            <div class="big-emoji">🌍</div>
+            <h3>Unglaublich!</h3>
+            <p>Die Welt steckt voller erstaunlicher Dinge.</p>
+            <button onclick="reveal(this)">Mehr erfahren +</button>
+            <div class="hidden-info">Jeden Tag gibt es etwas Neues zu entdecken. Die Wissenschaft hilft uns dabei!</div>
+        </article>
+
+        <article class="card">
+            <div class="big-emoji">🧠</div>
+            <h3>Schon gewusst?</h3>
+            <p>Wissen kann deine Vorstellungskraft verändern.</p>
+            <button onclick="reveal(this)">Mehr erfahren +</button>
+            <div class="hidden-info">Unser Gehirn verarbeitet ständig neue Informationen und verbindet sie miteinander.</div>
+        </article>
+
+        <article class="card">
+            <div class="big-emoji">✨</div>
+            <h3>Das Geheimnis</h3>
+            <p>Manchmal steckt das Spannendste im Detail.</p>
+            <button onclick="reveal(this)">Mehr erfahren +</button>
+            <div class="hidden-info">Genaues Beobachten ist eine der wichtigsten Fähigkeiten beim Entdecken.</div>
+        </article>
+    </div>
+</section>
+
+<section class="section facts" id="geheimnisse">
+    <div class="tag">02 — FUN FACTS</div>
+    <h2>Wusstest du <span>das?</span></h2>
+
+    <div class="fact-box">
+        <div id="factEmoji">🤯</div>
+        <p id="factText">Klicke auf den Button und entdecke einen zufälligen Fakt!</p>
+        <button class="main-button" onclick="newFact()">NEUER FAKT ↗</button>
+    </div>
+</section>
+
+<section class="section quiz" id="quiz">
+    <div class="tag">03 — CHALLENGE</div>
+    <h2>Wie schlau bist <span>du?</span></h2>
+
+    <div class="quiz-box">
+        <div id="question">Bereit für die Challenge?</div>
+        <div id="answers">
+            <button onclick="startQuiz()">START QUIZ 🚀</button>
+        </div>
+        <p id="result"></p>
+    </div>
+</section>
+
+<footer>
+    <div class="logo">UNKNOWN<span>®</span></div>
+    <p>KEEP EXPLORING. KEEP WONDERING. ✦</p>
+    <span>© 2026 — MADE FOR CURIOUS MINDS</span>
+</footer>
+
+<div id="popup">
+    <div class="popup-content">
+        <button id="closePopup">✕</button>
+        <div style="font-size:55px">🛸</div>
+        <h2>YOU FOUND IT!</h2>
+        <p>Du hast ein geheimes Easter Egg entdeckt!</p>
+        <span>Level: LEGENDARY ⭐</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

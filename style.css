@@ -1,0 +1,384 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #100d20;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .15;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 35px 35px;
+    z-index: -1;
+}
+
+header {
+    height: 80px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background: #100d20e8;
+    backdrop-filter: blur(15px);
+    z-index: 10;
+    border-bottom: 1px solid #ffffff15;
+}
+
+.logo {
+    font-family: Syne;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.logo span {
+    color: #c5ff5b;
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    color: #bcb8ce;
+    text-decoration: none;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #c5ff5b;
+}
+
+header button {
+    background: #c5ff5b;
+    color: #100d20;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 720px;
+    height: calc(100vh - 80px);
+    max-height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    background:
+        radial-gradient(ellipse at 50% 45%, #533b8b55, transparent 55%);
+}
+
+.hero-label, .tag {
+    color: #c5ff5b;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-family: Syne;
+    font-size: clamp(55px, 9vw, 115px);
+    line-height: .98;
+    margin: 35px 0;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: #c5ff5b;
+    text-shadow: 0 0 45px #c5ff5b55;
+}
+
+.hero p {
+    max-width: 520px;
+    color: #bcb8ce;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.main-button {
+    display: inline-block;
+    background: #c5ff5b;
+    color: #100d20;
+    text-decoration: none;
+    border: none;
+    padding: 17px 27px;
+    border-radius: 40px;
+    margin-top: 30px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.main-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px #c5ff5b55;
+}
+
+.floating {
+    position: absolute;
+    font-size: 50px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.emoji-one { left: 15%; top: 25%; }
+.emoji-two { right: 16%; top: 35%; animation-delay: -1s; }
+.emoji-three { left: 20%; bottom: 20%; animation-delay: -2s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-25px) rotate(10deg); }
+}
+
+.scroll {
+    position: absolute;
+    bottom: 25px;
+    color: #77718e;
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+.section {
+    padding: 120px 9%;
+}
+
+.section h2 {
+    font-family: Syne;
+    font-size: clamp(40px, 6vw, 68px);
+    margin: 25px 0;
+    line-height: 1.1;
+}
+
+.section h2 span {
+    color: #c5ff5b;
+}
+
+.intro {
+    color: #aaa5bd;
+    margin-bottom: 45px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 50px;
+}
+
+.card {
+    background: linear-gradient(145deg, #242039, #181528);
+    border: 1px solid #ffffff15;
+    border-radius: 22px;
+    padding: 30px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-9px);
+    border-color: #c5ff5b88;
+}
+
+.big-emoji {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    font-family: Syne;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card p, .hidden-info {
+    color: #aaa5bd;
+    line-height: 1.7;
+}
+
+.card button {
+    margin-top: 25px;
+    background: none;
+    border: none;
+    color: #c5ff5b;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden-info {
+    display: none;
+    margin-top: 20px;
+    border-top: 1px solid #ffffff22;
+    padding-top: 15px;
+}
+
+.facts {
+    background: #171329;
+    text-align: center;
+}
+
+.fact-box, .quiz-box {
+    max-width: 650px;
+    margin: 50px auto 0;
+    padding: 45px;
+    border-radius: 25px;
+    background: #25203d;
+    border: 1px solid #ffffff15;
+}
+
+#factEmoji {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+#factText {
+    color: #ddd8ec;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.quiz {
+    text-align: center;
+}
+
+#question {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+#answers {
+    display: grid;
+    gap: 12px;
+}
+
+#answers button {
+    padding: 15px;
+    border-radius: 12px;
+    background: #34304e;
+    color: white;
+    border: 1px solid #ffffff20;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#answers button:hover {
+    background: #c5ff5b;
+    color: #100d20;
+}
+
+#result {
+    margin-top: 20px;
+    color: #c5ff5b;
+}
+
+footer {
+    border-top: 1px solid #ffffff20;
+    padding: 45px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #88839c;
+    font-size: 12px;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #080614eF;
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.popup-content {
+    background: #292341;
+    border: 1px solid #c5ff5b;
+    padding: 45px;
+    border-radius: 25px;
+    text-align: center;
+    position: relative;
+    max-width: 400px;
+    line-height: 2;
+}
+
+.popup-content h2 {
+    color: #c5ff5b;
+    font-family: Syne;
+}
+
+.popup-content p {
+    color: #ddd8ec;
+}
+
+.popup-content span {
+    color: #c5ff5b;
+}
+
+#closePopup {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+@media(max-width: 750px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .floating {
+        font-size: 30px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 85px 7%;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
