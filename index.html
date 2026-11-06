@@ -4,201 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JURASSIC — The Lost Era</title>
+    <title>GALAXY MYSTERIES</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header class="header">
-    <a href="#" class="logo">JURASSIC<span>.</span></a>
+    <div class="starfield" id="starfield"></div>
 
-    <nav>
-        <a href="#start">Start</a>
-        <a href="#dinos">Dinosaurier</a>
-        <a href="#welt">Urzeitwelt</a>
-        <a href="#quiz">Quiz</a>
-    </nav>
+    <header>
+        <a href="#" class="logo">✦ GALAXY MYSTERIES</a>
 
-    <button class="secret-button" id="secretButton">🦴 TOP SECRET</button>
-</header>
+        <nav>
+            <a href="#start">Home</a>
+            <a href="#universum">Universum</a>
+            <a href="#planeten">Planeten</a>
+            <a href="#mysterien">Mysterien</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
+    </header>
 
-<section class="hero" id="start">
-    <div class="hero-glow"></div>
-
-    <div class="hero-content">
-        <div class="eyebrow">✦ A JOURNEY THROUGH PREHISTORY ✦</div>
-
-        <h1>THE LOST<br><span>ERA.</span></h1>
-
-        <p class="hero-description">
-            Eine Welt voller Giganten. Eine Zeit voller Geheimnisse.
-            Entdecke die faszinierende Geschichte der Dinosaurier.
-        </p>
-
-        <a href="#dinos" class="explore-button">
-            DIE REISE BEGINNT <span>↗</span>
-        </a>
-
-        <div class="hero-stats">
-            <div><strong>230+</strong><span>MILLIONEN JAHRE</span></div>
-            <div><strong>3</strong><span>ZEITALTER</span></div>
-            <div><strong>∞</strong><span>GEHEIMNISSE</span></div>
-        </div>
-    </div>
-
-    <div class="hero-dino">🦖</div>
-    <div class="hero-side-text">65 MILLIONEN JAHRE ZURÜCK</div>
-</section>
-
-<div class="ticker">
-    <div>🦖 DINOSAURIER &nbsp; ✦ &nbsp; URZEIT &nbsp; ✦ &nbsp; FOSSILIEN &nbsp; ✦ &nbsp; ABENTEUER &nbsp; ✦ &nbsp; DINOSAURIER &nbsp; ✦ &nbsp; URZEIT &nbsp; ✦ &nbsp; FOSSILIEN &nbsp; ✦ &nbsp;</div>
-</div>
-
-<section class="section" id="dinos">
-    <div class="section-label">01 / THE GIANTS</div>
-
-    <h2>Meet the <span>Giants.</span></h2>
-    <p class="section-intro">
-        Sie beherrschten die Erde. Lerne einige der bekanntesten Dinosaurier kennen.
-    </p>
-
-    <div class="dino-grid">
-
-        <article class="dino-card">
-            <div class="dino-number">01 / PREDATOR</div>
-            <div class="dino-emoji">🦖</div>
-            <h3>Tyrannosaurus Rex</h3>
-            <p class="latin">Tyrannosaurus rex</p>
-            <p>Ein gewaltiger Fleischfresser aus der späten Kreidezeit. Seine kräftigen Kiefer waren beeindruckend.</p>
-            <div class="dino-data">
-                <span>🕰️ Kreidezeit</span>
-                <span>📏 ca. 12 m</span>
+    <main>
+        <section class="hero" id="start">
+            <div class="hero-content">
+                <p class="eyebrow">✧ EIN BLICK INS UNENDLICHE ✧</p>
+                <h1>GALAXY<br><span>MYSTERIES</span></h1>
+                <p class="hero-text">
+                    Das Universum ist grösser, geheimnisvoller
+                    und faszinierender, als du denkst.
+                </p>
+                <a href="#universum" class="main-button">
+                    ENTDECKE DAS WELTALL <span>↗</span>
+                </a>
             </div>
-            <button onclick="showDino(0)">ENTDECKEN ↗</button>
-        </article>
 
-        <article class="dino-card">
-            <div class="dino-number">02 / HERBIVORE</div>
-            <div class="dino-emoji">🦕</div>
-            <h3>Brachiosaurus</h3>
-            <p class="latin">Brachiosaurus altithorax</p>
-            <p>Ein riesiger Pflanzenfresser mit langem Hals und besonders langen Vorderbeinen.</p>
-            <div class="dino-data">
-                <span>🕰️ Jura</span>
-                <span>📏 ca. 22 m</span>
+            <div class="cosmos">
+                <div class="cosmos-orbit orbit-one"></div>
+                <div class="cosmos-orbit orbit-two"></div>
+                <div class="cosmos-orbit orbit-three"></div>
+                <div class="cosmos-center">🌌</div>
+                <span class="floating-planet">🪐</span>
+                <span class="floating-moon">🌙</span>
+                <span class="floating-star">✦</span>
+                <span class="floating-star star-two">✧</span>
             </div>
-            <button onclick="showDino(1)">ENTDECKEN ↗</button>
-        </article>
 
-        <article class="dino-card">
-            <div class="dino-number">03 / ARMORED</div>
-            <div class="dino-emoji">🦏</div>
-            <h3>Triceratops</h3>
-            <p class="latin">Triceratops horridus</p>
-            <p>Seine drei Hörner und der grosse Nackenschild machten ihn unverwechselbar.</p>
-            <div class="dino-data">
-                <span>🕰️ Kreidezeit</span>
-                <span>📏 ca. 9 m</span>
+            <div class="scroll-hint">SCROLL TO EXPLORE ↓</div>
+        </section>
+
+        <section class="section" id="universum">
+            <p class="section-label">01 / THE UNIVERSE</p>
+            <h2>Ein Universum voller <span>Wunder.</span></h2>
+            <p class="section-intro">
+                Das Weltall ist kein leerer Ort. Es ist voller Sterne,
+                Planeten, Gaswolken und Galaxien. Wir haben bisher
+                nur einen kleinen Teil davon erforscht.
+            </p>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-symbol">🌌</span>
+                    <strong>Milliarden</strong>
+                    <p>Galaxien im beobachtbaren Universum – schätzen Forschende.</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-symbol">☀️</span>
+                    <strong>100 Milliarden+</strong>
+                    <p>Sterne könnte allein unsere Milchstrasse enthalten.</p>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-symbol">🪐</span>
+                    <strong>8 Planeten</strong>
+                    <p>Umkreisen unsere Sonne in unserem Sonnensystem.</p>
+                </article>
             </div>
-            <button onclick="showDino(2)">ENTDECKEN ↗</button>
-        </article>
+        </section>
 
-        <article class="dino-card">
-            <div class="dino-number">04 / THE HUNTER</div>
-            <div class="dino-emoji">🐊</div>
-            <h3>Spinosaurus</h3>
-            <p class="latin">Spinosaurus aegyptiacus</p>
-            <p>Ein ungewöhnlicher Raubsaurier mit einem auffälligen Rückensegel. Er lebte teilweise im Wasser.</p>
-            <div class="dino-data">
-                <span>🕰️ Kreidezeit</span>
-                <span>📏 ca. 14 m</span>
+        <section class="section" id="planeten">
+            <p class="section-label">02 / OUR SOLAR SYSTEM</p>
+            <h2>Die Welt der <span>Planeten.</span></h2>
+            <p class="section-intro">
+                Acht Planeten – und jeder ist auf seine eigene Art besonders.
+                Klicke auf einen Planeten, um mehr zu erfahren!
+            </p>
+
+            <div class="planet-grid">
+                <button class="planet-card" data-fact="Merkur ist der sonnennächste Planet. Ein Jahr auf ihm dauert nur 88 Erdentage.">
+                    <span class="planet-emoji">🌑</span>
+                    <strong>Merkur</strong>
+                    <small>Der Schnellste</small>
+                </button>
+
+                <button class="planet-card" data-fact="Die Venus ist der heisseste Planet unseres Sonnensystems. Ihre dichte Atmosphäre speichert sehr viel Wärme.">
+                    <span class="planet-emoji">🟠</span>
+                    <strong>Venus</strong>
+                    <small>Der heisseste Planet</small>
+                </button>
+
+                <button class="planet-card" data-fact="Die Erde ist bisher der einzige Ort, an dem wir Leben nachweisen konnten.">
+                    <span class="planet-emoji">🌍</span>
+                    <strong>Erde</strong>
+                    <small>Unser Zuhause</small>
+                </button>
+
+                <button class="planet-card" data-fact="Der Mars wird auch der rote Planet genannt. Seine Oberfläche enthält eisenhaltigen Staub.">
+                    <span class="planet-emoji">🔴</span>
+                    <strong>Mars</strong>
+                    <small>Der rote Planet</small>
+                </button>
+
+                <button class="planet-card" data-fact="Jupiter ist der grösste Planet unseres Sonnensystems. Sein berühmter Grosser Roter Fleck ist ein riesiger Sturm.">
+                    <span class="planet-emoji">🟤</span>
+                    <strong>Jupiter</strong>
+                    <small>Der Gigant</small>
+                </button>
+
+                <button class="planet-card" data-fact="Saturn ist für sein beeindruckendes Ringsystem bekannt. Die Ringe bestehen vor allem aus Eis- und Gesteinsstücken.">
+                    <span class="planet-emoji">🪐</span>
+                    <strong>Saturn</strong>
+                    <small>Der Ringplanet</small>
+                </button>
+
+                <button class="planet-card" data-fact="Uranus dreht sich beinahe auf der Seite. Deshalb hat er besonders ungewöhnliche Jahreszeiten.">
+                    <span class="planet-emoji">🩵</span>
+                    <strong>Uranus</strong>
+                    <small>Der Seitwärtsdreher</small>
+                </button>
+
+                <button class="planet-card" data-fact="Neptun ist der sonnenfernste Planet. Auf ihm können extrem starke Winde auftreten.">
+                    <span class="planet-emoji">🔵</span>
+                    <strong>Neptun</strong>
+                    <small>Der Eisriese</small>
+                </button>
             </div>
-            <button onclick="showDino(3)">ENTDECKEN ↗</button>
-        </article>
 
-    </div>
-</section>
+            <div class="fact-popup" id="planet-popup">
+                <button class="close-popup" id="close-planet">×</button>
+                <span>✦ PLANETEN-DATEI</span>
+                <p id="planet-fact">Wähle einen Planeten!</p>
+            </div>
+        </section>
 
-<section class="timeline-section" id="welt">
-    <div class="section-label">02 / THE TIMELINE</div>
-    <h2>Three eras.<br><span>One planet.</span></h2>
+        <section class="section mystery-section" id="mysterien">
+            <p class="section-label">03 / UNKNOWN SPACE</p>
+            <h2>Die grossen <span>Mysterien.</span></h2>
+            <p class="section-intro">
+                Manche Dinge im Universum sind so unglaublich,
+                dass sie wie Science-Fiction klingen.
+            </p>
 
-    <div class="timeline">
-        <article>
-            <div class="time-dot"></div>
-            <div class="time-number">252–201 MILLIONEN JAHRE</div>
-            <h3>🌋 Trias</h3>
-            <p>Die ersten Dinosaurier tauchten auf. Die Erde sah damals ganz anders aus.</p>
-        </article>
+            <div class="mystery-grid">
+                <article class="mystery-card">
+                    <span class="mystery-icon">🕳️</span>
+                    <h3>Schwarze Löcher</h3>
+                    <p>
+                        Ihre Anziehungskraft ist so stark, dass nicht einmal
+                        Licht aus ihrem Inneren entkommen kann.
+                    </p>
+                    <span class="card-number">MYSTERY 001</span>
+                </article>
 
-        <article>
-            <div class="time-dot"></div>
-            <div class="time-number">201–145 MILLIONEN JAHRE</div>
-            <h3>🌿 Jura</h3>
-            <p>Viele riesige Dinosaurier lebten auf der Erde. Einige entwickelten beeindruckende Körpergrössen.</p>
-        </article>
+                <article class="mystery-card">
+                    <span class="mystery-icon">🌑</span>
+                    <h3>Dunkle Materie</h3>
+                    <p>
+                        Wir können sie nicht direkt sehen. Doch ihre
+                        Schwerkraft beeinflusst die Bewegung von Galaxien.
+                    </p>
+                    <span class="card-number">MYSTERY 002</span>
+                </article>
 
-        <article>
-            <div class="time-dot"></div>
-            <div class="time-number">145–66 MILLIONEN JAHRE</div>
-            <h3>☄️ Kreidezeit</h3>
-            <p>Tyrannosaurus und Triceratops lebten in dieser Zeit. Am Ende kam es zum grossen Massenaussterben.</p>
-        </article>
-    </div>
-</section>
+                <article class="mystery-card">
+                    <span class="mystery-icon">💥</span>
+                    <h3>Der Urknall</h3>
+                    <p>
+                        Vor ungefähr 13,8 Milliarden Jahren begann das
+                        Universum aus einem extrem heissen und dichten Zustand
+                        zu expandieren.
+                    </p>
+                    <span class="card-number">MYSTERY 003</span>
+                </article>
 
-<section class="fact-section">
-    <div class="section-label">03 / UNKNOWN FACTS</div>
-    <h2>Mind = <span>Blown.</span></h2>
+                <article class="mystery-card">
+                    <span class="mystery-icon">👽</span>
+                    <h3>Ausserirdisches Leben?</h3>
+                    <p>
+                        Gibt es Leben auf anderen Welten? Bis heute haben
+                        wir keinen eindeutigen Beweis dafür gefunden.
+                    </p>
+                    <span class="card-number">MYSTERY 004</span>
+                </article>
+            </div>
+        </section>
 
-    <div class="fact-card">
-        <div id="factEmoji">🤯</div>
-        <p id="factText">Bereit für einen unglaublichen Dino-Fakt?</p>
-        <button class="explore-button" onclick="randomFact()">ÜBERRASCH MICH ↗</button>
-    </div>
-</section>
+        <section class="section facts-section">
+            <p class="section-label">04 / SPACE FACTS</p>
+            <h2>Wusstest du <span>schon?</span></h2>
 
-<section class="quiz-section" id="quiz">
-    <div class="section-label">04 / TEST YOUR KNOWLEDGE</div>
-    <h2>The Dino <span>Challenge.</span></h2>
-    <p>Beweise, dass du ein echter Dino-Experte bist!</p>
+            <div class="random-fact">
+                <span class="fact-star">✦</span>
+                <p id="random-fact">
+                    Ein Tag auf der Venus dauert länger als ein Venusjahr!
+                </p>
+                <button id="new-fact">NEUER FAKT ↻</button>
+            </div>
+        </section>
 
-    <div class="quiz-card">
-        <div class="quiz-progress" id="progress">READY?</div>
-        <h3 id="question">Bist du bereit?</h3>
-        <div id="answers">
-            <button onclick="startQuiz()">START QUIZ 🚀</button>
-        </div>
-        <div id="quizResult"></div>
-    </div>
-</section>
+        <section class="section quiz-section" id="quiz">
+            <p class="section-label">05 / TEST YOUR KNOWLEDGE</p>
+            <h2>Wie gut kennst du das <span>Universum?</span></h2>
 
-<footer>
-    <div class="logo">JURASSIC<span>.</span></div>
-    <p>THE PAST IS NEVER BORING.</p>
-    <p>© 2026 — THE LOST ERA</p>
-</footer>
+            <div class="quiz-box">
+                <div class="quiz-top">
+                    <span>✧ GALAXY QUIZ</span>
+                    <span id="quiz-progress">FRAGE 1 / 5</span>
+                </div>
 
-<div id="dinoPopup" class="popup">
-    <div class="popup-content">
-        <button class="close" onclick="closePopup()">✕</button>
-        <div id="popupEmoji" class="popup-emoji">🦖</div>
-        <div id="popupTitle"></div>
-        <p id="popupText"></p>
-    </div>
-</div>
+                <h3 id="question">Welcher Planet ist der grösste?</h3>
 
-<div id="secretPopup" class="popup">
-    <div class="popup-content secret-content">
-        <button class="close" onclick="closeSecret()">✕</button>
-        <div class="popup-emoji">🥚</div>
-        <h2>YOU FOUND AN EGG!</h2>
-        <p>Du hast ein geheimes Dinosaurier-Ei entdeckt.</p>
-        <div class="secret-level">SECRET LEVEL UNLOCKED ✨</div>
-    </div>
-</div>
+                <div class="answers" id="answers">
+                    <button class="answer">Mars</button>
+                    <button class="answer">Jupiter</button>
+                    <button class="answer">Merkur</button>
+                    <button class="answer">Venus</button>
+                </div>
 
-<script src="script.js"></script>
+                <p id="quiz-feedback"></p>
+                <button id="next-question" class="main-button" hidden>
+                    WEITER →
+                </button>
+            </div>
+        </section>
+
+        <section class="secret-section">
+            <p>✦ DU HAST DAS ENDE GEFUNDEN ✦</p>
+            <h2>Oder doch nicht?</h2>
+            <p>Manche Geheimnisse sind gut versteckt ...</p>
+            <button id="secret-button">GEHEIMNIS ENTSCHLÜSSELN</button>
+            <p id="secret-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>✦ GALAXY MYSTERIES ✦</p>
+        <span>THE UNIVERSE IS WAITING TO BE DISCOVERED.</span>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
