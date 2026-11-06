@@ -4,112 +4,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>??? — Discover the Unknown</title>
+    <title>JURASSIC — The Lost Era</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="cursor-glow"></div>
+<header class="header">
+    <a href="#" class="logo">JURASSIC<span>.</span></a>
 
-<header>
-    <a class="logo" href="#">UNKNOWN<span>®</span></a>
     <nav>
         <a href="#start">Start</a>
-        <a href="#wissen">Entdecken</a>
-        <a href="#geheimnisse">Geheimnisse</a>
+        <a href="#dinos">Dinosaurier</a>
+        <a href="#welt">Urzeitwelt</a>
         <a href="#quiz">Quiz</a>
     </nav>
-    <button id="secretBtn">??? ✦</button>
+
+    <button class="secret-button" id="secretButton">🦴 TOP SECRET</button>
 </header>
 
 <section class="hero" id="start">
-    <div class="hero-label">✦ A WORLD WAITING TO BE DISCOVERED ✦</div>
+    <div class="hero-glow"></div>
 
-    <h1>WELCOME TO<br>
-        <span>THE UNKNOWN.</span>
-    </h1>
+    <div class="hero-content">
+        <div class="eyebrow">✦ A JOURNEY THROUGH PREHISTORY ✦</div>
 
-    <p>Manche Dinge sind unglaublich. Andere sind unfassbar.
-       Und manche musst du einfach selbst entdecken.</p>
+        <h1>THE LOST<br><span>ERA.</span></h1>
 
-    <a href="#wissen" class="main-button">LET'S EXPLORE ↘</a>
+        <p class="hero-description">
+            Eine Welt voller Giganten. Eine Zeit voller Geheimnisse.
+            Entdecke die faszinierende Geschichte der Dinosaurier.
+        </p>
 
-    <div class="floating emoji-one">✨</div>
-    <div class="floating emoji-two">🔮</div>
-    <div class="floating emoji-three">⚡</div>
+        <a href="#dinos" class="explore-button">
+            DIE REISE BEGINNT <span>↗</span>
+        </a>
 
-    <div class="scroll">SCROLL TO DISCOVER ↓</div>
+        <div class="hero-stats">
+            <div><strong>230+</strong><span>MILLIONEN JAHRE</span></div>
+            <div><strong>3</strong><span>ZEITALTER</span></div>
+            <div><strong>∞</strong><span>GEHEIMNISSE</span></div>
+        </div>
+    </div>
+
+    <div class="hero-dino">🦖</div>
+    <div class="hero-side-text">65 MILLIONEN JAHRE ZURÜCK</div>
 </section>
 
-<section class="section" id="wissen">
-    <div class="tag">01 — DISCOVER</div>
-    <h2>Eine Welt voller<br><span>Überraschungen.</span></h2>
-    <p class="intro">Hier gibt es mehr zu entdecken, als du denkst.</p>
+<div class="ticker">
+    <div>🦖 DINOSAURIER &nbsp; ✦ &nbsp; URZEIT &nbsp; ✦ &nbsp; FOSSILIEN &nbsp; ✦ &nbsp; ABENTEUER &nbsp; ✦ &nbsp; DINOSAURIER &nbsp; ✦ &nbsp; URZEIT &nbsp; ✦ &nbsp; FOSSILIEN &nbsp; ✦ &nbsp;</div>
+</div>
 
-    <div class="card-grid" id="cards">
-        <article class="card">
-            <div class="big-emoji">🌍</div>
-            <h3>Unglaublich!</h3>
-            <p>Die Welt steckt voller erstaunlicher Dinge.</p>
-            <button onclick="reveal(this)">Mehr erfahren +</button>
-            <div class="hidden-info">Jeden Tag gibt es etwas Neues zu entdecken. Die Wissenschaft hilft uns dabei!</div>
+<section class="section" id="dinos">
+    <div class="section-label">01 / THE GIANTS</div>
+
+    <h2>Meet the <span>Giants.</span></h2>
+    <p class="section-intro">
+        Sie beherrschten die Erde. Lerne einige der bekanntesten Dinosaurier kennen.
+    </p>
+
+    <div class="dino-grid">
+
+        <article class="dino-card">
+            <div class="dino-number">01 / PREDATOR</div>
+            <div class="dino-emoji">🦖</div>
+            <h3>Tyrannosaurus Rex</h3>
+            <p class="latin">Tyrannosaurus rex</p>
+            <p>Ein gewaltiger Fleischfresser aus der späten Kreidezeit. Seine kräftigen Kiefer waren beeindruckend.</p>
+            <div class="dino-data">
+                <span>🕰️ Kreidezeit</span>
+                <span>📏 ca. 12 m</span>
+            </div>
+            <button onclick="showDino(0)">ENTDECKEN ↗</button>
         </article>
 
-        <article class="card">
-            <div class="big-emoji">🧠</div>
-            <h3>Schon gewusst?</h3>
-            <p>Wissen kann deine Vorstellungskraft verändern.</p>
-            <button onclick="reveal(this)">Mehr erfahren +</button>
-            <div class="hidden-info">Unser Gehirn verarbeitet ständig neue Informationen und verbindet sie miteinander.</div>
+        <article class="dino-card">
+            <div class="dino-number">02 / HERBIVORE</div>
+            <div class="dino-emoji">🦕</div>
+            <h3>Brachiosaurus</h3>
+            <p class="latin">Brachiosaurus altithorax</p>
+            <p>Ein riesiger Pflanzenfresser mit langem Hals und besonders langen Vorderbeinen.</p>
+            <div class="dino-data">
+                <span>🕰️ Jura</span>
+                <span>📏 ca. 22 m</span>
+            </div>
+            <button onclick="showDino(1)">ENTDECKEN ↗</button>
         </article>
 
-        <article class="card">
-            <div class="big-emoji">✨</div>
-            <h3>Das Geheimnis</h3>
-            <p>Manchmal steckt das Spannendste im Detail.</p>
-            <button onclick="reveal(this)">Mehr erfahren +</button>
-            <div class="hidden-info">Genaues Beobachten ist eine der wichtigsten Fähigkeiten beim Entdecken.</div>
+        <article class="dino-card">
+            <div class="dino-number">03 / ARMORED</div>
+            <div class="dino-emoji">🦏</div>
+            <h3>Triceratops</h3>
+            <p class="latin">Triceratops horridus</p>
+            <p>Seine drei Hörner und der grosse Nackenschild machten ihn unverwechselbar.</p>
+            <div class="dino-data">
+                <span>🕰️ Kreidezeit</span>
+                <span>📏 ca. 9 m</span>
+            </div>
+            <button onclick="showDino(2)">ENTDECKEN ↗</button>
+        </article>
+
+        <article class="dino-card">
+            <div class="dino-number">04 / THE HUNTER</div>
+            <div class="dino-emoji">🐊</div>
+            <h3>Spinosaurus</h3>
+            <p class="latin">Spinosaurus aegyptiacus</p>
+            <p>Ein ungewöhnlicher Raubsaurier mit einem auffälligen Rückensegel. Er lebte teilweise im Wasser.</p>
+            <div class="dino-data">
+                <span>🕰️ Kreidezeit</span>
+                <span>📏 ca. 14 m</span>
+            </div>
+            <button onclick="showDino(3)">ENTDECKEN ↗</button>
+        </article>
+
+    </div>
+</section>
+
+<section class="timeline-section" id="welt">
+    <div class="section-label">02 / THE TIMELINE</div>
+    <h2>Three eras.<br><span>One planet.</span></h2>
+
+    <div class="timeline">
+        <article>
+            <div class="time-dot"></div>
+            <div class="time-number">252–201 MILLIONEN JAHRE</div>
+            <h3>🌋 Trias</h3>
+            <p>Die ersten Dinosaurier tauchten auf. Die Erde sah damals ganz anders aus.</p>
+        </article>
+
+        <article>
+            <div class="time-dot"></div>
+            <div class="time-number">201–145 MILLIONEN JAHRE</div>
+            <h3>🌿 Jura</h3>
+            <p>Viele riesige Dinosaurier lebten auf der Erde. Einige entwickelten beeindruckende Körpergrössen.</p>
+        </article>
+
+        <article>
+            <div class="time-dot"></div>
+            <div class="time-number">145–66 MILLIONEN JAHRE</div>
+            <h3>☄️ Kreidezeit</h3>
+            <p>Tyrannosaurus und Triceratops lebten in dieser Zeit. Am Ende kam es zum grossen Massenaussterben.</p>
         </article>
     </div>
 </section>
 
-<section class="section facts" id="geheimnisse">
-    <div class="tag">02 — FUN FACTS</div>
-    <h2>Wusstest du <span>das?</span></h2>
+<section class="fact-section">
+    <div class="section-label">03 / UNKNOWN FACTS</div>
+    <h2>Mind = <span>Blown.</span></h2>
 
-    <div class="fact-box">
+    <div class="fact-card">
         <div id="factEmoji">🤯</div>
-        <p id="factText">Klicke auf den Button und entdecke einen zufälligen Fakt!</p>
-        <button class="main-button" onclick="newFact()">NEUER FAKT ↗</button>
+        <p id="factText">Bereit für einen unglaublichen Dino-Fakt?</p>
+        <button class="explore-button" onclick="randomFact()">ÜBERRASCH MICH ↗</button>
     </div>
 </section>
 
-<section class="section quiz" id="quiz">
-    <div class="tag">03 — CHALLENGE</div>
-    <h2>Wie schlau bist <span>du?</span></h2>
+<section class="quiz-section" id="quiz">
+    <div class="section-label">04 / TEST YOUR KNOWLEDGE</div>
+    <h2>The Dino <span>Challenge.</span></h2>
+    <p>Beweise, dass du ein echter Dino-Experte bist!</p>
 
-    <div class="quiz-box">
-        <div id="question">Bereit für die Challenge?</div>
+    <div class="quiz-card">
+        <div class="quiz-progress" id="progress">READY?</div>
+        <h3 id="question">Bist du bereit?</h3>
         <div id="answers">
             <button onclick="startQuiz()">START QUIZ 🚀</button>
         </div>
-        <p id="result"></p>
+        <div id="quizResult"></div>
     </div>
 </section>
 
 <footer>
-    <div class="logo">UNKNOWN<span>®</span></div>
-    <p>KEEP EXPLORING. KEEP WONDERING. ✦</p>
-    <span>© 2026 — MADE FOR CURIOUS MINDS</span>
+    <div class="logo">JURASSIC<span>.</span></div>
+    <p>THE PAST IS NEVER BORING.</p>
+    <p>© 2026 — THE LOST ERA</p>
 </footer>
 
-<div id="popup">
+<div id="dinoPopup" class="popup">
     <div class="popup-content">
-        <button id="closePopup">✕</button>
-        <div style="font-size:55px">🛸</div>
-        <h2>YOU FOUND IT!</h2>
-        <p>Du hast ein geheimes Easter Egg entdeckt!</p>
-        <span>Level: LEGENDARY ⭐</span>
+        <button class="close" onclick="closePopup()">✕</button>
+        <div id="popupEmoji" class="popup-emoji">🦖</div>
+        <div id="popupTitle"></div>
+        <p id="popupText"></p>
+    </div>
+</div>
+
+<div id="secretPopup" class="popup">
+    <div class="popup-content secret-content">
+        <button class="close" onclick="closeSecret()">✕</button>
+        <div class="popup-emoji">🥚</div>
+        <h2>YOU FOUND AN EGG!</h2>
+        <p>Du hast ein geheimes Dinosaurier-Ei entdeckt.</p>
+        <div class="secret-level">SECRET LEVEL UNLOCKED ✨</div>
     </div>
 </div>
 

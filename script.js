@@ -1,128 +1,225 @@
 
-// Karten öffnen
-function reveal(button) {
-    const info = button.nextElementSibling;
-
-    if (info.style.display === "block") {
-        info.style.display = "none";
-        button.textContent = "Mehr erfahren +";
-    } else {
-        info.style.display = "block";
-        button.textContent = "Weniger anzeigen −";
+const dinos = [
+    {
+        emoji: "🦖",
+        name: "Tyrannosaurus Rex",
+        info: "Der T. rex lebte vor ungefähr 68 bis 66 Millionen Jahren. Er hatte einen riesigen Schädel, kräftige Hinterbeine und zwei sehr kurze Arme. Er war einer der bekanntesten grossen Landräuber."
+    },
+    {
+        emoji: "🦕",
+        name: "Brachiosaurus",
+        info: "Der Brachiosaurus lebte vor ungefähr 154 bis 150 Millionen Jahren. Seine langen Vorderbeine und sein langer Hals halfen ihm, Pflanzen in höheren Baumregionen zu erreichen."
+    },
+    {
+        emoji: "🦏",
+        name: "Triceratops",
+        info: "Der Triceratops lebte vor ungefähr 68 bis 66 Millionen Jahren. Er hatte drei Hörner und einen grossen knöchernen Nackenschild. Er ernährte sich von Pflanzen."
+    },
+    {
+        emoji: "🐊",
+        name: "Spinosaurus",
+        info: "Der Spinosaurus lebte vor ungefähr 100 Millionen Jahren. Sein auffälliges Rückensegel machte ihn besonders. Seine Lebensweise war eng mit Gewässern verbunden."
     }
+];
+
+// Dinosaurier-Pop-ups
+function showDino(index) {
+    const dino = dinos[index];
+
+    document.getElementById("popupEmoji").textContent = dino.emoji;
+    document.getElementById("popupTitle").innerHTML =
+        "<h2>" + dino.name + "</h2>";
+    document.getElementById("popupText").textContent = dino.info;
+
+    document.getElementById("dinoPopup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("dinoPopup").style.display = "none";
 }
 
 // Zufällige Fakten
 const facts = [
-    ["🐙", "Ein Oktopus hat drei Herzen."],
-    ["🌌", "Im Weltall gibt es riesige Wolken aus Gas und Staub."],
-    ["🦈", "Haie gibt es schon länger als Bäume."],
-    ["🍯", "Honig kann bei richtiger Lagerung sehr lange haltbar bleiben."],
-    ["🪐", "Ein Tag auf der Venus dauert länger als ihr Jahr."],
-    ["🦋", "Schmetterlinge schmecken mit ihren Füssen."],
-    ["⚡", "Blitze können heisser sein als die Oberfläche der Sonne."]
+    ["🦈", "Haie existierten schon lange vor den ersten Dinosauriern."],
+    ["🪶", "Viele Dinosaurier besassen Federn. Vögel stammen von theropoden Dinosauriern ab."],
+    ["🥚", "Dinosaurier legten Eier. Forschende haben viele versteinerte Dinosauriereier gefunden."],
+    ["🌍", "Die Kontinente lagen zur Zeit der Dinosaurier teilweise ganz anders als heute."],
+    ["🦕", "Einige Sauropoden konnten über 30 Meter lang werden."],
+    ["🦖", "Der T. rex hatte einen aussergewöhnlich kräftigen Biss."],
+    ["☄️", "Vor etwa 66 Millionen Jahren führte ein grosser Asteroideneinschlag zum Aussterben der Nicht-Vogel-Dinosaurier."]
 ];
 
-function newFact() {
-    const random = facts[Math.floor(Math.random() * facts.length)];
-    document.getElementById("factEmoji").textContent = random[0];
-    document.getElementById("factText").textContent = random[1];
+function randomFact() {
+    const fact = facts[Math.floor(Math.random() * facts.length)];
+
+    document.getElementById("factEmoji").textContent = fact[0];
+    document.getElementById("factText").textContent = fact[1];
 }
 
 // Quiz
 const questions = [
     {
-        q: "Welches Tier hat drei Herzen?",
-        a: ["Hai", "Oktopus", "Delfin"],
+        q: "In welchem Erdzeitalter lebte der T. rex?",
+        answers: ["Trias", "Kreidezeit", "Jura"],
         correct: 1
     },
     {
-        q: "Welcher Planet ist der Sonne am nächsten?",
-        a: ["Merkur", "Mars", "Jupiter"],
+        q: "Was frass der Triceratops?",
+        answers: ["Pflanzen", "Fische", "Andere Dinosaurier"],
         correct: 0
     },
     {
-        q: "Wie viele Beine hat eine Spinne?",
-        a: ["6", "8", "10"],
+        q: "Wovon stammen die heutigen Vögel ab?",
+        answers: ["Säugetieren", "Theropoden-Dinosauriern", "Fischen"],
         correct: 1
     },
     {
-        q: "Was ist das grösste Organ des Menschen?",
-        a: ["Herz", "Gehirn", "Haut"],
+        q: "Wie viele Hörner hatte ein Triceratops?",
+        answers: ["Zwei", "Vier", "Drei"],
         correct: 2
+    },
+    {
+        q: "Wann starben die Nicht-Vogel-Dinosaurier aus?",
+        answers: ["Vor 66 Millionen Jahren", "Vor 5 Millionen Jahren", "Vor 200 Millionen Jahren"],
+        correct: 0
     }
 ];
 
-let currentQuestion = 0;
-let score = 0;
+let current = 0;
+let points = 0;
+let answered = false;
 
 function startQuiz() {
-    currentQuestion = 0;
-    score = 0;
+    current = 0;
+    points = 0;
+    answered = false;
+    document.getElementById("quizResult").textContent = "";
     showQuestion();
 }
 
 function showQuestion() {
-    const q = questions[currentQuestion];
+    answered = false;
+
+    const q = questions[current];
+
+    document.getElementById("progress").textContent =
+        "QUESTION " + (current + 1) + " / " + questions.length;
 
     document.getElementById("question").textContent = q.q;
+
     const answers = document.getElementById("answers");
     answers.innerHTML = "";
 
-    q.a.forEach((answer, index) => {
+    q.answers.forEach((answer, index) => {
         const button = document.createElement("button");
-        button.textContent = answer;
-        button.onclick = () => checkAnswer(index);
+        button.textContent = "➜  " + answer;
+        button.onclick = () => checkAnswer(index, button);
         answers.appendChild(button);
     });
 }
 
-function checkAnswer(index) {
-    if (index === questions[currentQuestion].correct) {
-        score++;
+function checkAnswer(index, button) {
+    if (answered) return;
+    answered = true;
+
+    const q = questions[current];
+
+    if (index === q.correct) {
+        points++;
+        button.textContent = "✓  " + q.answers[index] + " — RICHTIG!";
+        button.style.background = "#b9e477";
+        button.style.color = "#142014";
+    } else {
+        button.textContent = "✕  " + q.answers[index];
+        button.style.background = "#8c3939";
     }
 
-    currentQuestion++;
+    document.querySelectorAll("#answers button").forEach((b, i) => {
+        b.disabled = true;
 
-    if (currentQuestion < questions.length) {
+        if (i === q.correct) {
+            b.style.borderColor = "#b9e477";
+        }
+    });
+
+    const result = document.getElementById("quizResult");
+
+    result.textContent =
+        index === q.correct ? "SUPER! 🦖" : "Die richtige Antwort ist: " + q.answers[q.correct];
+
+    const next = document.createElement("button");
+    next.textContent = current === questions.length - 1
+        ? "ERGEBNIS ANZEIGEN 🏆"
+        : "NÄCHSTE FRAGE →";
+
+    next.onclick = nextQuestion;
+    next.style.marginTop = "20px";
+    next.style.padding = "14px 20px";
+    next.style.background = "#b9e477";
+    next.style.color = "#142014";
+    next.style.border = "none";
+    next.style.borderRadius = "5px";
+    next.style.fontWeight = "bold";
+    next.style.cursor = "pointer";
+
+    document.getElementById("answers").appendChild(next);
+}
+
+function nextQuestion() {
+    current++;
+
+    if (current < questions.length) {
         showQuestion();
+        document.getElementById("quizResult").textContent = "";
     } else {
-        document.getElementById("question").textContent = "Challenge beendet! 🏆";
+        document.getElementById("progress").textContent = "MISSION COMPLETED";
+        document.getElementById("question").textContent = "🏆 DEIN ERGEBNIS";
+
         document.getElementById("answers").innerHTML =
             "<button onclick='startQuiz()'>NOCHMAL SPIELEN ↻</button>";
-        document.getElementById("result").textContent =
-            "Du hast " + score + " von " + questions.length + " Punkten erreicht!";
+
+        let message = "Weiterforschen, Dino-Experte!";
+
+        if (points === 5) message = "LEGENDARY! Du bist ein Dino-Master! 🦖";
+        else if (points >= 3) message = "Fantastisch! Du kennst dich gut aus! 🌿";
+
+        document.getElementById("quizResult").textContent =
+            points + " / 5 Punkte — " + message;
     }
 }
 
-// Geheimes Easter Egg
-const popup = document.getElementById("popup");
+// Geheimnis
+function closeSecret() {
+    document.getElementById("secretPopup").style.display = "none";
+}
 
-document.getElementById("secretBtn").addEventListener("click", () => {
-    popup.style.display = "flex";
+document.getElementById("secretButton").addEventListener("click", () => {
+    document.getElementById("secretPopup").style.display = "flex";
 });
 
-document.getElementById("closePopup").addEventListener("click", () => {
-    popup.style.display = "none";
-});
+// Tastenkombination: DINO
+let secret = "";
 
-// Auch mit ESC schliessen
 document.addEventListener("keydown", event => {
+    secret += event.key.toLowerCase();
+    secret = secret.slice(-4);
+
+    if (secret === "dino") {
+        document.getElementById("secretPopup").style.display = "flex";
+        secret = "";
+    }
+
     if (event.key === "Escape") {
-        popup.style.display = "none";
+        closeSecret();
+        closePopup();
     }
 });
 
-// Geheime Tastenkombination
-let secretCode = "";
-
-document.addEventListener("keydown", event => {
-    secretCode += event.key.toLowerCase();
-    secretCode = secretCode.slice(-5);
-
-    if (secretCode === "magic") {
-        document.body.style.background = "#21103a";
-        document.querySelector(".hero h1 span").textContent = "MAGIC!";
-        popup.style.display = "flex";
-    }
+// Klick ausserhalb eines Pop-ups schliesst es
+document.querySelectorAll(".popup").forEach(popup => {
+    popup.addEventListener("click", event => {
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
 });
